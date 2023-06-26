@@ -46,7 +46,7 @@
                                     </tr>
                                     @foreach ($usr as $item)
                                         <tr>
-                                            <td><img src="{{ asset('img/' . $item->foto) }}" width="100" height="100"></td>
+                                            <td><img class="img-profile rounded-circle" src="{{ asset('img/' . $item->foto) }}" width="100" height="100"></td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->level }}</td>

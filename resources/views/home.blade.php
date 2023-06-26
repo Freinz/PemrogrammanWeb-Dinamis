@@ -15,10 +15,13 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
+        @if(auth()->user()->level == "Admin" || auth()->user()->level == "Habib" )
         @include('components.left-sidebar')
+        @endif
         <!-- End of Sidebar -->
+
+       
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -31,13 +34,11 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
+                
                 <div class="container-fluid">
+                    @include('components.content')
 
-
-                    <!-- Page Heading -->
-                    @if(auth()->user()->level == "Admin" || auth()->user()->level == "Habib" )
-                    <h1 class="h3 mb-4 text-gray-800">You are logged in as an {{ auth()->user()->level }}</h1>
-                    @endif
+                    
 
                 </div>
                 <!-- /.container-fluid -->
