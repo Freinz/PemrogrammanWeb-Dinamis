@@ -1,6 +1,13 @@
 <!-- Page Heading -->
 @if(auth()->user()->level == "Admin" || auth()->user()->level == "Habib" )
-                    <h1 class="h3 mb-4 text-gray-800">You are logged in as an {{ auth()->user()->level }}</h1>
+<script>
+        // Check if the user level is Admin or Habib
+        if ("{{ auth()->user()->level }}" === "Admin" || "{{ auth()->user()->level }}" === "Habib") {
+            // Display a pop-up message
+            alert("You are logged in as an {{ auth()->user()->level }}");
+        }
+    </script>
+                    
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="{{url('user-data')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Data User</a>
